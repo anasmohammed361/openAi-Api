@@ -26,6 +26,20 @@ class OpenAi {
             return "Oops!! Found something fishy . Try Again!!!"
         }
     }
+
+    generateImage = async (prompt) => {
+        try {
+            const response = await this.openai.createImage({
+                prompt,
+                n: 1,
+                size: "1024x1024",
+            })
+            return response
+        } catch (error) {
+            console.log(error);
+            return "Oops!! Found something fishy . Try Again!!!"
+        }
+    }
     
 }
 
